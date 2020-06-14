@@ -1,3 +1,9 @@
+import json
+
+from hamcrest import *
+from jsonpath import jsonpath
+from jsonschema import validate
+
 from test_requests.test_department.base_api.department import Department
 
 
@@ -38,3 +44,15 @@ class TestDepartment:
         # 调用get_departmentlist方法，不需传入参数，表示获取所有的部门信息
         r = self.department.get_departmentlist()
         assert r["errcode"] == 0
+
+        # json的格式化工具，打印带格式，好看,indent表示缩进,ensure_ascii转码，能显示中文
+        print(json.dumps(r, indent=2, ensure_ascii=False))
+        # print(jsonpath(r, "$.department[?(@.id == 5)]"))
+        res = jsonpath(r, "$.department[?(@.id == 5)]")[0]["name"] # jsonpath 应用场景：层级嵌套比较深的断言
+        assert res == "重庆研发中心2"
+
+        assert_that(res, equal_to("重庆研发中心2"), reason="匹配失败")  # json schema 应用场景： 更加强大的assert
+        # assert_that(res, has_value("重庆研发中心2"), reason="匹配失败")
+
+        schema = json.load(open("schema.json"))
+        validate(r, schema) # json schema 应用场景：返回值多变，但是结构体或者结构体内的多个字段是有固定格式的断言
