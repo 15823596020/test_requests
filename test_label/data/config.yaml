@@ -1,2 +1,23 @@
 corpid: ww170e13c876c74789
 corpsecret: N5-mHIhmaAYP1-qcMaccISC0Ktw5L8YY93GDjUy7pjs
+create_label:
+  method: post
+  url: https://qyapi.weixin.qq.com/cgi-bin/tag/create
+create_labelmember:
+  method: post
+  url: https://qyapi.weixin.qq.com/cgi-bin/tag/addtagusers
+delete_label:
+  method: get
+  url: https://qyapi.weixin.qq.com/cgi-bin/tag/delete
+delete_labelmember:
+  method: post
+  url: https://qyapi.weixin.qq.com/cgi-bin/tag/deltagusers
+get_labellist:
+  method: get
+  url: https://qyapi.weixin.qq.com/cgi-bin/tag/list
+get_labelmember:
+  method: get
+  url: https://qyapi.weixin.qq.com/cgi-bin/tag/get
+update_label:
+  method: post
+  url: https://qyapi.weixin.qq.com/cgi-bin/tag/update
