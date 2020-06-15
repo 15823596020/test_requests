@@ -7,6 +7,7 @@ class TestDemo:
         rep = {
             "corpid": "ww170e13c876c74789",
             "corpsecret": "N5-mHIhmaAYP1-qcMaccISC0Ktw5L8YY93GDjUy7pjs",
+            "get_token":{"method": "get", "url":"https://qyapi.weixin.qq.com/cgi-bin/gettoken"},
             "create_label":{"method": "post", "url": "https://qyapi.weixin.qq.com/cgi-bin/tag/create"},
             "update_label":{"method": "post", "url": "https://qyapi.weixin.qq.com/cgi-bin/tag/update"},
             "delete_label":{"method": "get", "url": "https://qyapi.weixin.qq.com/cgi-bin/tag/delete"},

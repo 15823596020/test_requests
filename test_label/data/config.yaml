@@ -18,6 +18,9 @@ get_labellist:
 get_labelmember:
   method: get
   url: https://qyapi.weixin.qq.com/cgi-bin/tag/get
+get_token:
+  method: get
+  url: https://qyapi.weixin.qq.com/cgi-bin/gettoken
 update_label:
   method: post
   url: https://qyapi.weixin.qq.com/cgi-bin/tag/update
