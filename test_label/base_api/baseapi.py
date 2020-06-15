@@ -18,4 +18,4 @@ class BaseApi:
 
     # yaml_load方法用于打开传入的文件内容,主要是封装yaml
     def yaml_load(self, file):
-        return yaml.safe_load(open(file))  # 返回打开的文件
+        return yaml.safe_load(open(file, encoding='UTF-8'))  # 返回打开的文件

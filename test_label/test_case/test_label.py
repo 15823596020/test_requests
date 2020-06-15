@@ -9,9 +9,9 @@ class TestLabel:
     def setup_class(self):
         self.label = Label()  # 实例化Label类
         # 获取token，调用yaml_load方法，并传入需打开的文件，取其corpid和corpsecret的值
-        self.token = self.label.get_token(self.label.yaml_load("./../data/config.yaml")["corpid"],
-                                          self.label.yaml_load("./../data/config.yaml")["corpsecret"])
-        self.data = self.label.yaml_load("./../data/testdata.yaml")
+        self.token = self.label.get_token(self.label.yaml_load("../data/config.yaml")["corpid"],
+                                          self.label.yaml_load("../data/config.yaml")["corpsecret"])
+        self.data = self.label.yaml_load("../data/testdata.yaml")
 
     # 创建标签，传入tagid
     def test_create_label_tagid(self):
